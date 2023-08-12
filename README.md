@@ -1,1 +1,1 @@
-# CMPG-323-Project-2-33152985
+# CMPG 323 Project 2 - 33152985
