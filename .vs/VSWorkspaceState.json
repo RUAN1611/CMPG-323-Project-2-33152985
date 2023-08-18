@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\EcoPowerLogistics",
+    "\\EcoPowerLogistics\\EcoPowerLogistics-API"
   ],
+  "SelectedNode": "\\EcoPowerLogistics\\EcoPowerLogistics.sln",
   "PreviewInSolutionExplorer": false
 }
