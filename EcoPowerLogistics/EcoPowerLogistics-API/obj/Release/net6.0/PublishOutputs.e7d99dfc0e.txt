@@ -7,6 +7,8 @@ D:\Users\Ruan\source\repos\RUAN1611\CMPG-323-Project-2-33152985\EcoPowerLogistic
 D:\Users\Ruan\source\repos\RUAN1611\CMPG-323-Project-2-33152985\EcoPowerLogistics\EcoPowerLogistics-API\obj\Release\net6.0\PubTmp\Out\Humanizer.dll
 D:\Users\Ruan\source\repos\RUAN1611\CMPG-323-Project-2-33152985\EcoPowerLogistics\EcoPowerLogistics-API\obj\Release\net6.0\PubTmp\Out\MessagePack.dll
 D:\Users\Ruan\source\repos\RUAN1611\CMPG-323-Project-2-33152985\EcoPowerLogistics\EcoPowerLogistics-API\obj\Release\net6.0\PubTmp\Out\MessagePack.Annotations.dll
+D:\Users\Ruan\source\repos\RUAN1611\CMPG-323-Project-2-33152985\EcoPowerLogistics\EcoPowerLogistics-API\obj\Release\net6.0\PubTmp\Out\Microsoft.AspNetCore.JsonPatch.dll
+D:\Users\Ruan\source\repos\RUAN1611\CMPG-323-Project-2-33152985\EcoPowerLogistics\EcoPowerLogistics-API\obj\Release\net6.0\PubTmp\Out\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 D:\Users\Ruan\source\repos\RUAN1611\CMPG-323-Project-2-33152985\EcoPowerLogistics\EcoPowerLogistics-API\obj\Release\net6.0\PubTmp\Out\Microsoft.AspNetCore.Razor.Language.dll
 D:\Users\Ruan\source\repos\RUAN1611\CMPG-323-Project-2-33152985\EcoPowerLogistics\EcoPowerLogistics-API\obj\Release\net6.0\PubTmp\Out\Microsoft.Bcl.AsyncInterfaces.dll
 D:\Users\Ruan\source\repos\RUAN1611\CMPG-323-Project-2-33152985\EcoPowerLogistics\EcoPowerLogistics-API\obj\Release\net6.0\PubTmp\Out\Microsoft.Build.dll
@@ -47,6 +49,7 @@ D:\Users\Ruan\source\repos\RUAN1611\CMPG-323-Project-2-33152985\EcoPowerLogistic
 D:\Users\Ruan\source\repos\RUAN1611\CMPG-323-Project-2-33152985\EcoPowerLogistics\EcoPowerLogistics-API\obj\Release\net6.0\PubTmp\Out\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
 D:\Users\Ruan\source\repos\RUAN1611\CMPG-323-Project-2-33152985\EcoPowerLogistics\EcoPowerLogistics-API\obj\Release\net6.0\PubTmp\Out\Microsoft.Win32.SystemEvents.dll
 D:\Users\Ruan\source\repos\RUAN1611\CMPG-323-Project-2-33152985\EcoPowerLogistics\EcoPowerLogistics-API\obj\Release\net6.0\PubTmp\Out\Newtonsoft.Json.dll
+D:\Users\Ruan\source\repos\RUAN1611\CMPG-323-Project-2-33152985\EcoPowerLogistics\EcoPowerLogistics-API\obj\Release\net6.0\PubTmp\Out\Newtonsoft.Json.Bson.dll
 D:\Users\Ruan\source\repos\RUAN1611\CMPG-323-Project-2-33152985\EcoPowerLogistics\EcoPowerLogistics-API\obj\Release\net6.0\PubTmp\Out\NuGet.Common.dll
 D:\Users\Ruan\source\repos\RUAN1611\CMPG-323-Project-2-33152985\EcoPowerLogistics\EcoPowerLogistics-API\obj\Release\net6.0\PubTmp\Out\NuGet.Configuration.dll
 D:\Users\Ruan\source\repos\RUAN1611\CMPG-323-Project-2-33152985\EcoPowerLogistics\EcoPowerLogistics-API\obj\Release\net6.0\PubTmp\Out\NuGet.DependencyResolver.Core.dll

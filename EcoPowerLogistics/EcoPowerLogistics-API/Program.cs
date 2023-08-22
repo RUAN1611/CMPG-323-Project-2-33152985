@@ -17,7 +17,11 @@ startup.ConfigureServices(builder.Services);
 var app = builder.Build();
 
 app.UseSwagger();
-app.UseSwaggerUI();
+app.UseSwaggerUI(options =>
+{
+    options.SwaggerEndpoint("/swagger/v1/swagger.json", "EcoPowerLogistics-APIV1");
+    options.RoutePrefix = String.Empty;
+});
 
 app.UseHttpsRedirection();
 
