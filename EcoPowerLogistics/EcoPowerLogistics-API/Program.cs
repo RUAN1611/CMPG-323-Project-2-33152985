@@ -6,7 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 var startup = new Startup(builder.Configuration); // Added Startup.cs for adding custom dependencies
 
 // Add services to the container.
-
+builder.Services.AddAutoMapper(typeof(MappingConfig));
 builder.Services.AddControllers().AddNewtonsoftJson();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

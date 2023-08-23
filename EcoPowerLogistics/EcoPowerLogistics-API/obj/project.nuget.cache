@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "vFBvDgzfCjweyI7XEW+VqRIJFl8iGdzo4GMWHofDYgFN3eg3/EgGRQJmffSo8OmMo+J9LeN8LHnisHCTHr67eQ==",
+  "dgSpecHash": "wYe4VoopU1i0VIKP7EfaNXQuky06ORx8oriqCflP51GIcm7HvlPjNnfprFoiwEYJmph/DJcMJka3C8zQ8KdcNg==",
   "success": true,
   "projectFilePath": "D:\\Users\\Ruan\\source\\repos\\RUAN1611\\CMPG-323-Project-2-33152985\\EcoPowerLogistics\\EcoPowerLogistics-API\\EcoPowerLogistics-API.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Ruan\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\Ruan\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "C:\\Users\\Ruan\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\Ruan\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Ruan\\.nuget\\packages\\humanizer.core.af\\2.14.1\\humanizer.core.af.2.14.1.nupkg.sha512",

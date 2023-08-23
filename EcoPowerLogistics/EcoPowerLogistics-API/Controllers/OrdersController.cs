@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using EcoPowerLogistics_API.Models;
 using Microsoft.AspNetCore.JsonPatch;
+using AutoMapper;
+using EcoPowerLogistics_API.Models.DTO;
 
 namespace EcoPowerLogistics_API.Controllers
 {
@@ -15,35 +17,38 @@ namespace EcoPowerLogistics_API.Controllers
     public class OrdersController : ControllerBase
     {
         private readonly ecopowerlogisticsdevContext _context;
+        private readonly IMapper _mapper;
 
-        public OrdersController(ecopowerlogisticsdevContext context)
+        public OrdersController(ecopowerlogisticsdevContext context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
 
         // GET: api/Orders
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<ActionResult<IEnumerable<Order>>> GetOrders()
+        public async Task<ActionResult<IEnumerable<OrderDTO>>> GetOrders()
         {
-          if (_context.Orders == null)
-          {
-              return NotFound();
-          }
-            return await _context.Orders.ToListAsync();
+            if (_context.Orders == null)
+            {
+                return NotFound();
+            }
+            var orders = await _context.Orders.ToListAsync();
+            return _mapper.Map<List<OrderDTO>>(orders);
         }
 
         // GET: api/Orders/5
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<ActionResult<Order>> GetOrder(short id)
+        public async Task<ActionResult<OrderDTO>> GetOrder(short id)
         {
-          if (_context.Orders == null)
-          {
-              return NotFound();
-          }
+            if (_context.Orders == null)
+            {
+                return NotFound();
+            }
             var order = await _context.Orders.FindAsync(id);
 
             if (order == null)
@@ -51,27 +56,27 @@ namespace EcoPowerLogistics_API.Controllers
                 return NotFound();
             }
 
-            return order;
+            return _mapper.Map<OrderDTO>(order);
         }
 
         [HttpGet("customer/{id}", Name = "GetOrderByCustomer")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<ActionResult<Order>> GetOrderByCustomer(short id)
+        public async Task<ActionResult<List<OrderDTO>>> GetOrderByCustomer(short id)
         {
             if (_context.Orders == null)
             {
                 return NotFound();
             }
 
-            var order = await _context.Orders.FirstOrDefaultAsync(x => x.CustomerId == id);
+            var orders = await _context.Orders.AllAsync(x => x.CustomerId == id);
 
-            if (order == null)
+            if (orders == null)
             {
                 return NotFound();
             }
 
-            return order;
+            return _mapper.Map<List<OrderDTO>>(orders).ToList();
         }
 
         // PUT: api/Orders/5
@@ -81,8 +86,9 @@ namespace EcoPowerLogistics_API.Controllers
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<IActionResult> PutOrder(short id, Order order)
+        public async Task<IActionResult> PutOrder(short id, OrderDTO orderDTO)
         {
+            var order = _mapper.Map<Order>(orderDTO);
             if (id != order.OrderId)
             {
                 return BadRequest();
@@ -113,36 +119,47 @@ namespace EcoPowerLogistics_API.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult> PatchOrder(int id, [FromBody] JsonPatchDocument<Order> patchOrder)
+        public async Task<IActionResult> PatchOrder(int id, [FromBody] JsonPatchDocument<OrderDTO> patchOrderDTO)
         {
-            if (id == 0 || patchOrder == null)
+            if (id <= 0 || patchOrderDTO == null)
             {
                 return BadRequest();
             }
-            var order = _context.Orders.FirstOrDefault(x => x.OrderId == id);
-            if (order == null)
+
+            var orderFromDb = _context.Orders.FirstOrDefault(x => x.OrderId == id);
+
+            if (orderFromDb == null)
             {
-                return BadRequest();
+                return NotFound();
             }
-            patchOrder.ApplyTo(order, ModelState);
-            await _context.SaveChangesAsync();
-            if (!ModelState.IsValid)
+
+            var orderToPatch = _mapper.Map<OrderDTO>(orderFromDb);
+
+            patchOrderDTO.ApplyTo(orderToPatch, ModelState);
+
+            if (!TryValidateModel(orderToPatch))
             {
                 return BadRequest(ModelState);
             }
-            return Ok(order);
+
+            _mapper.Map(orderToPatch, orderFromDb);
+
+            await _context.SaveChangesAsync();
+
+            return NoContent();
         }
 
         // POST: api/Orders
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status409Conflict)]
-        public async Task<ActionResult<Order>> PostOrder(Order order)
+        public async Task<ActionResult<Order>> PostOrder(OrderDTO orderDTO)
         {
-          if (_context.Orders == null)
-          {
-              return Problem("Entity set 'ecopowerlogisticsdevContext.Orders'  is null.");
-          }
+            var order = _mapper.Map<Order>(orderDTO);
+            if (_context.Orders == null)
+            {
+                return Problem("Entity set 'ecopowerlogisticsdevContext.Orders'  is null.");
+            }
             _context.Orders.Add(order);
             try
             {
