@@ -11,6 +11,7 @@ namespace EcoPowerLogistics_API
             CreateMap<Order, OrderDTO>().ReverseMap();
             CreateMap<Product, ProductDTO>().ReverseMap();
             CreateMap<Customer, CustomerDTO>().ReverseMap();
+            CreateMap<OrderDetail, OrderDetailDTO>().ReverseMap();
         }
     }
 }

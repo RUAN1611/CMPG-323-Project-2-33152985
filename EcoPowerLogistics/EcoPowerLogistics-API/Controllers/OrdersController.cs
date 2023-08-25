@@ -36,7 +36,7 @@ namespace EcoPowerLogistics_API.Controllers
                 return NotFound();
             }
             var orders = await _context.Orders.ToListAsync();
-            return _mapper.Map<List<OrderDTO>>(orders);
+            return Ok(_mapper.Map<List<OrderDTO>>(orders));
         }
 
         // GET: api/Orders/5
@@ -56,7 +56,7 @@ namespace EcoPowerLogistics_API.Controllers
                 return NotFound();
             }
 
-            return _mapper.Map<OrderDTO>(order);
+            return Ok(_mapper.Map<OrderDTO>(order));
         }
 
         [HttpGet("customer/{id}", Name = "GetOrderByCustomer")]
@@ -69,14 +69,14 @@ namespace EcoPowerLogistics_API.Controllers
                 return NotFound();
             }
 
-            var orders = await _context.Orders.AllAsync(x => x.CustomerId == id);
+            var orders = await _context.Orders.Where(x => x.CustomerId == id).ToListAsync();
 
             if (orders == null)
             {
                 return NotFound();
             }
 
-            return _mapper.Map<List<OrderDTO>>(orders).ToList();
+            return Ok(_mapper.Map<List<OrderDTO>>(orders));
         }
 
         // PUT: api/Orders/5
@@ -93,6 +93,10 @@ namespace EcoPowerLogistics_API.Controllers
             {
                 return BadRequest();
             }
+
+            var customer = _context.Customers.FirstOrDefault(x => x.CustomerId == orderDTO.CustomerId);
+
+            order.Customer = customer;
 
             _context.Entry(order).State = EntityState.Modified;
 
@@ -153,13 +157,18 @@ namespace EcoPowerLogistics_API.Controllers
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status409Conflict)]
-        public async Task<ActionResult<Order>> PostOrder(OrderDTO orderDTO)
+        public async Task<ActionResult<OrderDTO>> PostOrder(OrderDTO orderDTO)
         {
             var order = _mapper.Map<Order>(orderDTO);
             if (_context.Orders == null)
             {
                 return Problem("Entity set 'ecopowerlogisticsdevContext.Orders'  is null.");
             }
+
+            var customer = _context.Customers.FirstOrDefault(x => x.CustomerId == orderDTO.CustomerId);
+
+            order.Customer = customer;
+
             _context.Orders.Add(order);
             try
             {

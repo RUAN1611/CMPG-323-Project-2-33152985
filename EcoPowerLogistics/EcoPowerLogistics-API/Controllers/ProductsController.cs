@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using EcoPowerLogistics_API.Models;
 using Microsoft.AspNetCore.JsonPatch;
+using AutoMapper;
+using EcoPowerLogistics_API.Models.DTO;
 
 namespace EcoPowerLogistics_API.Controllers
 {
@@ -15,26 +17,29 @@ namespace EcoPowerLogistics_API.Controllers
     public class ProductsController : ControllerBase
     {
         private readonly ecopowerlogisticsdevContext _context;
+        private readonly IMapper _mapper;
 
-        public ProductsController(ecopowerlogisticsdevContext context)
+        public ProductsController(ecopowerlogisticsdevContext context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
 
         // GET: api/Products
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Product>>> GetProducts()
+        public async Task<ActionResult<IEnumerable<ProductDTO>>> GetProducts()
         {
-          if (_context.Products == null)
-          {
-              return NotFound();
-          }
-            return await _context.Products.ToListAsync();
+            if (_context.Products == null)
+            {
+                return NotFound();
+            }
+            var products = await _context.Products.ToListAsync();
+            return Ok(_mapper.Map<List<ProductDTO>>(products));
         }
 
         // GET: api/Products/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Product>> GetProduct(short id)
+        public async Task<ActionResult<ProductDTO>> GetProduct(short id)
         {
             if (_context.Products == null)
             {
@@ -47,11 +52,11 @@ namespace EcoPowerLogistics_API.Controllers
                 return NotFound();
             }
 
-            return product;
+            return Ok(_mapper.Map<ProductDTO>(product));
         }
 
         [HttpGet("product/{id}")]
-        public async Task<ActionResult<IEnumerable<Product>>> GetProductByOrder(short id)
+        public async Task<ActionResult<IEnumerable<ProductDTO>>> GetProductsByOrder(short id)
         {
             if (_context.Products == null)
             {
@@ -68,14 +73,15 @@ namespace EcoPowerLogistics_API.Controllers
                 return NotFound();
             }
 
-            return products;
+            return Ok(_mapper.Map<List<ProductDTO>>(products));
         }
 
         // PUT: api/Products/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutProduct(short id, Product product)
+        public async Task<IActionResult> PutProduct(short id, ProductDTO productDTO)
         {
+            var product = _mapper.Map<Product>(productDTO);
             if (id != product.ProductId)
             {
                 return BadRequest();
@@ -106,35 +112,46 @@ namespace EcoPowerLogistics_API.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult> PatchProduct(int id, [FromBody] JsonPatchDocument<Product> patchProduct)
+        public async Task<IActionResult> PatchProduct(int id, [FromBody] JsonPatchDocument<ProductDTO> patchProductDTO)
         {
-            if (id == 0 || patchProduct == null)
+            if (id <= 0 || patchProductDTO == null)
             {
                 return BadRequest();
             }
-            var product = _context.Products.FirstOrDefault(x => x.ProductId == id);
-            if (product == null)
+
+            var productFromDb = _context.Products.FirstOrDefault(x => x.ProductId == id);
+
+            if (productFromDb == null)
             {
-                return BadRequest();
+                return NotFound();
             }
-            patchProduct.ApplyTo(product, ModelState);
-            await _context.SaveChangesAsync();
-            if (!ModelState.IsValid)
+
+            var productToPatch = _mapper.Map<ProductDTO>(productFromDb);
+
+            patchProductDTO.ApplyTo(productToPatch, ModelState);
+
+            if (!TryValidateModel(productToPatch))
             {
                 return BadRequest(ModelState);
             }
-            return Ok(product);
+
+            _mapper.Map(productToPatch, productFromDb);
+
+            await _context.SaveChangesAsync();
+
+            return NoContent();
         }
 
         // POST: api/Products
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Product>> PostProduct(Product product)
+        public async Task<ActionResult<ProductDTO>> PostProduct(ProductDTO productDTO)
         {
-          if (_context.Products == null)
-          {
-              return Problem("Entity set 'ecopowerlogisticsdevContext.Products'  is null.");
-          }
+            var product = _mapper.Map<Product>(productDTO);
+            if (_context.Products == null)
+            {
+                return Problem("Entity set 'ecopowerlogisticsdevContext.Products'  is null.");
+            }
             _context.Products.Add(product);
             try
             {

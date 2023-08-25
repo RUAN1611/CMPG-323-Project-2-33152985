@@ -357,6 +357,8 @@ D:\Users\Ruan\source\repos\RUAN1611\CMPG-323-Project-2-33152985\EcoPowerLogistic
 D:\Users\Ruan\source\repos\RUAN1611\CMPG-323-Project-2-33152985\EcoPowerLogistics\EcoPowerLogistics-API\obj\Release\net6.0\win-x86\PubTmp\Out\msquic.dll
 D:\Users\Ruan\source\repos\RUAN1611\CMPG-323-Project-2-33152985\EcoPowerLogistics\EcoPowerLogistics-API\obj\Release\net6.0\win-x86\PubTmp\Out\ucrtbase.dll
 D:\Users\Ruan\source\repos\RUAN1611\CMPG-323-Project-2-33152985\EcoPowerLogistics\EcoPowerLogistics-API\obj\Release\net6.0\win-x86\PubTmp\Out\aspnetcorev2_inprocess.dll
+D:\Users\Ruan\source\repos\RUAN1611\CMPG-323-Project-2-33152985\EcoPowerLogistics\EcoPowerLogistics-API\obj\Release\net6.0\win-x86\PubTmp\Out\AutoMapper.dll
+D:\Users\Ruan\source\repos\RUAN1611\CMPG-323-Project-2-33152985\EcoPowerLogistics\EcoPowerLogistics-API\obj\Release\net6.0\win-x86\PubTmp\Out\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 D:\Users\Ruan\source\repos\RUAN1611\CMPG-323-Project-2-33152985\EcoPowerLogistics\EcoPowerLogistics-API\obj\Release\net6.0\win-x86\PubTmp\Out\Humanizer.dll
 D:\Users\Ruan\source\repos\RUAN1611\CMPG-323-Project-2-33152985\EcoPowerLogistics\EcoPowerLogistics-API\obj\Release\net6.0\win-x86\PubTmp\Out\MessagePack.dll
 D:\Users\Ruan\source\repos\RUAN1611\CMPG-323-Project-2-33152985\EcoPowerLogistics\EcoPowerLogistics-API\obj\Release\net6.0\win-x86\PubTmp\Out\MessagePack.Annotations.dll
