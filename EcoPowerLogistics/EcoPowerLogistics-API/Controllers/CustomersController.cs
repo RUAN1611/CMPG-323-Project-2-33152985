@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using EcoPowerLogistics_API.Models;
 using Microsoft.AspNetCore.JsonPatch;
+using EcoPowerLogistics_API.Models.DTO;
+using AutoMapper;
 
 namespace EcoPowerLogistics_API.Controllers
 {
@@ -15,35 +17,39 @@ namespace EcoPowerLogistics_API.Controllers
     public class CustomersController : ControllerBase
     {
         private readonly ecopowerlogisticsdevContext _context;
+        private readonly IMapper _mapper;
 
-        public CustomersController(ecopowerlogisticsdevContext context)
+        public CustomersController(ecopowerlogisticsdevContext context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
 
         // GET: api/Customers
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<ActionResult<IEnumerable<Customer>>> GetCustomers()
+        public async Task<ActionResult<IEnumerable<CustomerDTO>>> GetCustomers()
         {
-          if (_context.Customers == null)
-          {
-              return NotFound();
-          }
-            return Ok(await _context.Customers.ToListAsync());
+            if (_context.Customers == null)
+            {
+                return NotFound();
+            }
+            var customers = await _context.Customers.ToListAsync();
+            return Ok(_mapper.Map<List<CustomerDTO>>(customers));
         }
 
         // GET: api/Customers/5
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<ActionResult<Customer>> GetCustomer(short id)
+        public async Task<ActionResult<CustomerDTO>> GetCustomer(short id)
         {
-          if (_context.Customers == null)
-          {
-              return NotFound();
-          }
+            if (_context.Customers == null)
+            {
+                return NotFound();
+            }
+
             var customer = await _context.Customers.FindAsync(id);
 
             if (customer == null)
@@ -51,7 +57,7 @@ namespace EcoPowerLogistics_API.Controllers
                 return NotFound();
             }
 
-            return Ok(customer);
+            return Ok(_mapper.Map<CustomerDTO>(customer));
         }
 
         // PUT: api/Customers/5
@@ -61,8 +67,11 @@ namespace EcoPowerLogistics_API.Controllers
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<IActionResult> PutCustomer(short id, Customer customer)
+        public async Task<IActionResult> PutCustomer(short id, CustomerDTO customerDTO)
         {
+
+            var customer = _mapper.Map<Customer>(customerDTO);
+
             if (id != customer.CustomerId)
             {
                 return BadRequest();
@@ -86,19 +95,21 @@ namespace EcoPowerLogistics_API.Controllers
                 }
             }
 
-            return Ok(customer);
+            return Ok(customerDTO);
         }
 
         // POST: api/Customers
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status409Conflict)]
-        public async Task<ActionResult<Customer>> PostCustomer(Customer customer)
+        public async Task<ActionResult<CustomerDTO>> PostCustomer(CustomerDTO customerDTO)
         {
-          if (_context.Customers == null)
-          {
-              return Problem("Entity set 'ecopowerlogisticsdevContext.Customers'  is null.");
-          }
+            var customer = _mapper.Map<Customer>(customerDTO);
+
+            if (_context.Customers == null)
+            {
+                return Problem("Entity set 'ecopowerlogisticsdevContext.Customers'  is null.");
+            }
             _context.Customers.Add(customer);
             try
             {
@@ -123,25 +134,36 @@ namespace EcoPowerLogistics_API.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult> PatchCustomer(int id, [FromBody] JsonPatchDocument<Customer> patchCustomer)
+        public async Task<IActionResult> PatchCustomer(int id, [FromBody] JsonPatchDocument<CustomerDTO> patchCustomerDTO)
         {
-            if(id == 0 || patchCustomer == null)
+            if (id <= 0 || patchCustomerDTO == null)
             {
                 return BadRequest();
             }
-            var customer = _context.Customers.FirstOrDefault(x => x.CustomerId == id);
-            if(customer == null)
+
+            var customerFromDb = _context.Customers.FirstOrDefault(x => x.CustomerId == id);
+
+            if (customerFromDb == null)
             {
-                return BadRequest();
+                return NotFound();
             }
-            patchCustomer.ApplyTo(customer, ModelState);
-            await _context.SaveChangesAsync();
-            if (!ModelState.IsValid)
+
+            var customerToPatch = _mapper.Map<CustomerDTO>(customerFromDb);
+
+            patchCustomerDTO.ApplyTo(customerToPatch, ModelState);
+
+            if (!TryValidateModel(customerToPatch))
             {
                 return BadRequest(ModelState);
             }
-            return Ok(customer);
+
+            _mapper.Map(customerToPatch, customerFromDb);
+
+            await _context.SaveChangesAsync();
+
+            return NoContent();
         }
+
 
         // DELETE: api/Customers/5
         [HttpDelete("{id}")]

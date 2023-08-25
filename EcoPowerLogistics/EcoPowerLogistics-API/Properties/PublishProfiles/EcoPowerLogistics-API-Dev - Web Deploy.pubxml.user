@@ -7,7 +7,12 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAp2Xw5xzmFkyVMX1nUALKOQAAAAACAAAAAAAQZgAAAAEAACAAAAAik5VS3hm96wv9EoP8iIdmkLLMptIHy2eXbyMOjR1KWAAAAAAOgAAAAAIAACAAAADclN4OOhEf3rdxWWXz606EIZJuBJm3bkrQg9vNg9SM6IAAAADaiaL1A7qRLrM+BQwtYDOswJttacdjpD8HdgRH5q+O2rZ5muy8FKhIoZZbs0zt0WNHdEdhER1gNZV0UuREjzO4ksDLXTpLWJlQPOyqWMUoiBQMHEhuNgpnVnfmxpcpCQPtpCnB2nLFWVrB8QJdXqupV6z3lYkOiC6fbe/jh+Y2GkAAAAAE36B8kLlf77fPozPi5HZwQ2V8jfYCqc0ntweyToffu33szXVo3L+TxlvDaJB25r1PEhWIJXaKLHD9hRVu3J0c</EncryptedPassword>
-    <History>True|2023-08-17T18:07:11.9769990Z;True|2023-08-17T20:59:21.7315498+03:00;True|2023-08-17T20:43:03.2125810+03:00;True|2023-08-17T20:31:55.6150336+03:00;</History>
+    <History>True|2023-08-24T16:38:08.0756170Z;True|2023-08-23T20:09:06.7583670+03:00;True|2023-08-22T14:08:06.1313922+03:00;True|2023-08-22T14:04:19.8787032+03:00;True|2023-08-22T14:02:00.5744933+03:00;True|2023-08-22T13:57:40.0772479+03:00;True|2023-08-22T13:54:24.5744718+03:00;True|2023-08-17T21:07:11.9769990+03:00;True|2023-08-17T20:59:21.7315498+03:00;True|2023-08-17T20:43:03.2125810+03:00;True|2023-08-17T20:31:55.6150336+03:00;</History>
     <LastFailureDetails />
   </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Server=tcp:sqldb-ecopower-dev.database.windows.net,1433%3bInitial Catalog=ecopowerlogistics-dev%3bPersist Security Info=False%3bUser ID=ruan%3bPassword=Genesis%401611%3bMultipleActiveResultSets=False%3bEncrypt=True%3bTrustServerCertificate=False%3bConnection Timeout=30%3b</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
 </Project>
