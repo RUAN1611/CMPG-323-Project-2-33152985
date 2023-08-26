@@ -43,20 +43,25 @@ namespace EcoPowerLogistics_API.Controllers
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<ActionResult<OrderDTO>> GetOrder(short id)
+        public async Task<ActionResult<Order>> GetOrder(short id)
         {
             if (_context.Orders == null)
             {
                 return NotFound();
             }
-            var order = await _context.Orders.FindAsync(id);
+
+            var order = await _context.Orders
+            .Include(o => o.Customer)
+            .Include(o => o.OrderDetails)
+                .ThenInclude(od => od.Product)
+            .FirstOrDefaultAsync(o => o.OrderId == id);
 
             if (order == null)
             {
                 return NotFound();
             }
 
-            return Ok(_mapper.Map<OrderDTO>(order));
+            return Ok(order);
         }
 
         [HttpGet("customer/{id}", Name = "GetOrderByCustomer")]

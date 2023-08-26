@@ -27,6 +27,8 @@ namespace EcoPowerLogistics_API.Controllers
 
         // GET: api/Products
         [HttpGet]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<ActionResult<IEnumerable<ProductDTO>>> GetProducts()
         {
             if (_context.Products == null)
@@ -39,6 +41,8 @@ namespace EcoPowerLogistics_API.Controllers
 
         // GET: api/Products/5
         [HttpGet("{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<ActionResult<ProductDTO>> GetProduct(short id)
         {
             if (_context.Products == null)
@@ -56,6 +60,8 @@ namespace EcoPowerLogistics_API.Controllers
         }
 
         [HttpGet("product/{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<ActionResult<IEnumerable<ProductDTO>>> GetProductsByOrder(short id)
         {
             if (_context.Products == null)
@@ -79,6 +85,9 @@ namespace EcoPowerLogistics_API.Controllers
         // PUT: api/Products/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
         public async Task<IActionResult> PutProduct(short id, ProductDTO productDTO)
         {
             var product = _mapper.Map<Product>(productDTO);
@@ -145,6 +154,8 @@ namespace EcoPowerLogistics_API.Controllers
         // POST: api/Products
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status409Conflict)]
         public async Task<ActionResult<ProductDTO>> PostProduct(ProductDTO productDTO)
         {
             var product = _mapper.Map<Product>(productDTO);
@@ -174,6 +185,8 @@ namespace EcoPowerLogistics_API.Controllers
 
         // DELETE: api/Products/5
         [HttpDelete("{id}")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> DeleteProduct(short id)
         {
             if (_context.Products == null)
