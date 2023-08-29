@@ -2,7 +2,7 @@
 
 ### LOGIN DETAILS FOR DEMO ADMIN ACCOUNT
 
-"username": "demoadmin",
+"username": "demoadmin", <br />
 "password": "Demo@123"
 
 ### HOW TO USE THE API
@@ -86,6 +86,92 @@
 
 ![Products](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/ProductsGetByOrder1.png)
 ![Products](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/ProductsGetByOrder2.png)
+
+### ORDERS
+
+## GET ALL ORDERS
+
+![Orders](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/OrdersGetAll1.png)
+![Orders](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/OrdersGetAll2.png)
+
+## ADD AN ORDER
+
+![Orders](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/OrdersPost1.png)
+![Orders](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/OrdersPost2.png)
+![Orders](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/OrdersPost3.png)
+
+## GET ORDER BY ID
+
+![Orders](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/OrdersGet1.png)
+![Orders](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/OrdersGet2.png)
+![Orders](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/OrdersGet3.png)
+
+## UPDATE ORDER
+
+![Orders](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/OrdersPut1.png)
+![Orders](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/OrdersPut2.png)
+![Orders](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/OrdersPut3.png)
+
+## PARTIALLY UPDATE ORDER
+
+![Orders](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/OrdersPatch1.png)
+![Orders](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/OrdersPatch2.png)
+
+## REMOVE AN ORDER
+
+![Orders](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/OrdersDelete1.png)
+![Orders](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/OrdersDelete2.png)
+![Orders](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/OrdersDelete3.png)
+
+## GET ORDER BY CUSTOMER ID
+
+![Orders](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/OrdersGetByCustomer1.png)
+![Orders](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/OrdersGetByCustomer2.png)
+![Orders](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/OrdersGetByCustomer3.png)
+
+### ORDER DETAILS
+
+## GET ALL ORDER DETAILS
+
+![Order Details](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/OrderDetailsGetAll1.png)
+![Order Details](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/OrderDetailsGetAll2.png)
+
+## ADD AN ORDER DETAIL
+
+![Order Details](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/OrderDetailsPost1.png)
+![Order Details](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/OrderDetailsPost2.png)
+![Order Details](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/OrderDetailsPost3.png)
+
+## GET ORDER DETAIL BY ID
+
+![Order Details](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/OrderDetailsGet1.png)
+![Order Details](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/OrderDetailsGet2.png)
+![Order Details](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/OrderDetailsGet3.png)
+
+## UPDATE ORDER DETAIL
+
+![Order Details](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/OrderDetailsPut1.png)
+![Order Details](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/OrderDetailsPut2.png)
+![Order Details](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/OrderDetailsPut3.png)
+
+## PARTIALLY UPDATE ORDER DETAIL
+
+![Order Details](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/OrderDetailsPatch1.png)
+![Order Details](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/OrderDetailsPatch2.png)
+![Order Details](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/OrderDetailsPatch3.png)
+
+## REMOVE ORDER DETAIL
+
+![Order Details](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/OrderDetailsDelete1.png)
+![Order Details](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/OrderDetailsDelete2.png)
+
+### 401 AUTHORIZATION ERROR
+
+![Token Failure](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/TokenFailure1.png)
+![Token Failure](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/TokenFailure2.png)
+
+
+
 
 
 
