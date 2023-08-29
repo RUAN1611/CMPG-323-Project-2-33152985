@@ -8,11 +8,15 @@ using Microsoft.EntityFrameworkCore;
 using EcoPowerLogistics_API.Models;
 using AutoMapper;
 using EcoPowerLogistics_API.Models.DTO;
+using Microsoft.AspNetCore.JsonPatch;
+using Microsoft.AspNetCore.Authorization;
+using System.Data;
 
 namespace EcoPowerLogistics_API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(Roles = "Admin")]
     public class OrderDetailsController : ControllerBase
     {
         private readonly ecopowerlogisticsdevContext _context;
@@ -26,6 +30,8 @@ namespace EcoPowerLogistics_API.Controllers
 
         // GET: api/OrderDetails
         [HttpGet]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<ActionResult<IEnumerable<OrderDetailDTO>>> GetOrderDetails()
         {
             if (_context.OrderDetails == null)
@@ -38,27 +44,38 @@ namespace EcoPowerLogistics_API.Controllers
 
         // GET: api/OrderDetails/5
         [HttpGet("{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<ActionResult<OrderDetail>> GetOrderDetail(short id)
         {
             if (_context.OrderDetails == null)
             {
                 return NotFound();
             }
-            var orderDetail = await _context.OrderDetails.FindAsync(id);
+
+            var orderDetail = await _context.OrderDetails
+            .Include(od => od.Order)
+                .ThenInclude(o => o.Customer)
+            .Include(od => od.Product)
+            .FirstOrDefaultAsync(od => od.OrderDetailsId == id);
 
             if (orderDetail == null)
             {
                 return NotFound();
             }
 
-            return orderDetail;
+            return Ok(orderDetail);
         }
 
         // PUT: api/OrderDetails/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutOrderDetail(short id, OrderDetail orderDetail)
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        public async Task<IActionResult> PutOrderDetail(short id, OrderDetailDTO orderDetailDTO)
         {
+            var orderDetail = _mapper.Map<OrderDetail>(orderDetailDTO);
             if (id != orderDetail.OrderDetailsId)
             {
                 return BadRequest();
@@ -88,6 +105,9 @@ namespace EcoPowerLogistics_API.Controllers
         // POST: api/OrderDetails
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status409Conflict)]
         public async Task<ActionResult<OrderDetailDTO>> PostOrderDetail(OrderDetailDTO orderDetailDTO)
         {
             var orderDetail = _mapper.Map<OrderDetail>(orderDetailDTO);
@@ -97,8 +117,8 @@ namespace EcoPowerLogistics_API.Controllers
             }
 
             // Fetch the order and product from the database
-            var order = await _context.Orders.FindAsync(orderDetailDTO.OrderId);
-            var product = await _context.Products.FindAsync(orderDetailDTO.ProductId);
+            var order = await _context.Orders.FindAsync(orderDetail.OrderId);
+            var product = await _context.Products.FindAsync(orderDetail.ProductId);
 
             // Check if order and product exist
             if (order == null || product == null)
@@ -130,8 +150,44 @@ namespace EcoPowerLogistics_API.Controllers
             return CreatedAtAction("GetOrderDetail", new { id = orderDetail.OrderDetailsId }, orderDetail);
         }
 
+        [HttpPatch("{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<IActionResult> PatchOrderDetail(int id, [FromBody] JsonPatchDocument<OrderDetailDTO> patchOrderDetailDTO)
+        {
+            if (id <= 0 || patchOrderDetailDTO == null)
+            {
+                return BadRequest();
+            }
+
+            var orderDetailFromDb = _context.OrderDetails.FirstOrDefault(x => x.OrderDetailsId == id);
+
+            if (orderDetailFromDb == null)
+            {
+                return NotFound();
+            }
+
+            var orderDetailToPatch = _mapper.Map<OrderDetailDTO>(orderDetailFromDb);
+
+            patchOrderDetailDTO.ApplyTo(orderDetailToPatch, ModelState);
+
+            if (!TryValidateModel(orderDetailToPatch))
+            {
+                return BadRequest(ModelState);
+            }
+
+            _mapper.Map(orderDetailToPatch, orderDetailFromDb);
+
+            await _context.SaveChangesAsync();
+
+            return NoContent();
+        }
+
         // DELETE: api/OrderDetails/5
         [HttpDelete("{id}")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> DeleteOrderDetail(short id)
         {
             if (_context.OrderDetails == null)

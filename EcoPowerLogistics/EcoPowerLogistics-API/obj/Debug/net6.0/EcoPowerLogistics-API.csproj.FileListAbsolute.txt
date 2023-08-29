@@ -247,3 +247,9 @@ D:\Users\Ruan\source\repos\RUAN1611\CMPG-323-Project-2-33152985\EcoPowerLogistic
 D:\Users\Ruan\source\repos\RUAN1611\CMPG-323-Project-2-33152985\EcoPowerLogistics\EcoPowerLogistics-API\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
 D:\Users\Ruan\source\repos\RUAN1611\CMPG-323-Project-2-33152985\EcoPowerLogistics\EcoPowerLogistics-API\bin\Debug\net6.0\AutoMapper.dll
 D:\Users\Ruan\source\repos\RUAN1611\CMPG-323-Project-2-33152985\EcoPowerLogistics\EcoPowerLogistics-API\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:\Users\Ruan\source\repos\RUAN1611\CMPG-323-Project-2-33152985\EcoPowerLogistics\EcoPowerLogistics-API\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Users\Ruan\source\repos\RUAN1611\CMPG-323-Project-2-33152985\EcoPowerLogistics\EcoPowerLogistics-API\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\Users\Ruan\source\repos\RUAN1611\CMPG-323-Project-2-33152985\EcoPowerLogistics\EcoPowerLogistics-API\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\Users\Ruan\source\repos\RUAN1611\CMPG-323-Project-2-33152985\EcoPowerLogistics\EcoPowerLogistics-API\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+D:\Users\Ruan\source\repos\RUAN1611\CMPG-323-Project-2-33152985\EcoPowerLogistics\EcoPowerLogistics-API\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
+D:\Users\Ruan\source\repos\RUAN1611\CMPG-323-Project-2-33152985\EcoPowerLogistics\EcoPowerLogistics-API\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll

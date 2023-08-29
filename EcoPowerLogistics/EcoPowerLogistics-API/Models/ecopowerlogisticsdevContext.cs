@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using EcoPowerLogistics_API.Authentication;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace EcoPowerLogistics_API.Models
 {
-    public partial class ecopowerlogisticsdevContext : DbContext
+    public partial class ecopowerlogisticsdevContext : IdentityDbContext<ApplicationUser>
     {
         public ecopowerlogisticsdevContext()
         {
@@ -31,6 +33,7 @@ namespace EcoPowerLogistics_API.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Customer>(entity =>
             {
                 entity.Property(e => e.CustomerId).ValueGeneratedNever();

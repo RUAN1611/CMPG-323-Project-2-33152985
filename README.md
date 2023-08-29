@@ -1,75 +1,198 @@
 # CMPG 323 Project 2 - 33152985
 
-## General Instructions For Using The API
+### LOGIN DETAILS FOR DEMO ADMIN ACCOUNT
 
-### GET METHODS
-![General 1 GET](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/General1GET.png)
-![General 2 GET](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/General2GET.png)
-![General 3 GET](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/General3GET.png)
-![General 4 GET](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/General4GET.png)
+"username": "demoadmin", <br />
+"password": "Demo@123"
 
-### POST METHODS
-![General 1 POST](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/General1POST.png)
-![General 2 POST](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/General2POST.png)
-![General 3 POST](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/General3POST.png)
-![General 4 POST](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/General4POST.png)
+### HOW TO USE THE API
 
-## Instructions For Using Customers API
+![Start](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/Start1.png)
+![Start](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/Start2.png)
+![Start](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/Start3.png)
+![Start](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/Start4.png)
+![Start](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/Start5.png)
+![Start](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/Start6.png)
+![Start](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/Start7.png)
+
+### CUSTOMERS
 
 ## GET ALL CUSTOMERS
 
-Click here.
 ![Customer](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/CustomersGetAll1.png)
-
-Then press execute and you will see the following data:
 ![Customer](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/CustomersGetAll2.png)
 
-## GET CUSTOMER BY ID
+## ADD A CUSTOMER
 
-Click here.
+![Customer](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/CustomersPost1.png)
+![Customer](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/CustomersPost2.png)
+![Customer](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/CustomersPost3.png)
+
+## GET SPECIFIC CUSTOMER
+
 ![Customer](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/CustomersGet1.png)
-
-Then type the ID and press execute.
 ![Customer](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/CustomersGet2.png)
-
-Now you will see the following data.
-![Customer](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/CustomersGet3.png)
 
 ## UPDATE CUSTOMER
 
-Click here.
 ![Customer](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/CustomersPut1.png)
-
-Type in the ID and make sure all the details as shown in the screenshot is entered.
 ![Customer](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/CustomersPut2.png)
-
-200 Status will be shown and details that are updated if successful.
-![Customer](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/CustomersPut3.png)
 
 ## PARTIAL UPDATE CUSTOMER
 
-Click here.
 ![Customer](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/CustomersPatch1.png)
-
-Get the customer details you want to edit by making use of any GET method.
 ![Customer](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/CustomersPatch2.png)
-
-Only add the fields as shown.  The path name is the attribute you want to edit. Make sure it matches exactly
-as seen on the GET methods. Example is shown in the screenshot.
-![Customer](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/CustomersPatch3.png)
-
-200 Status will be shown and details that are updated if successful.
-![Customer](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/CustomersPatch4.png)
 
 ## REMOVE CUSTOMER
 
-Click here.
 ![Customer](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/CustomersDelete1.png)
-
-Type in the ID of the customer that you would like to remove and press execute.
 ![Customer](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/CustomersDelete2.png)
 
-Status 204 will be returned if successful.
-![Customer](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/CustomersDelete3.png)
+### PRODUCTS
+
+## GET ALL PRODUCTS
+
+![Products](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/ProductsGetAll1.png)
+![Products](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/ProductsGetAll2.png)
+
+## ADD A PRODUCT
+
+![Products](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/ProductsPost1.png)
+![Products](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/ProductsPost2.png)
+![Products](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/ProductsPost3.png)
+
+## GET PRODUCT BY ID
+
+![Products](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/ProductsGet1.png)
+![Products](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/ProductsGet2.png)
+
+## UPDATE PRODUCT
+
+![Products](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/ProductsPut1.png)
+![Products](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/ProductsPut2.png)
+
+## PARTIAL UPDATE PRODUCT
+
+![Products](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/ProductsPatch1.png)
+![Products](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/ProductsPatch2.png)
+
+## REMOVE PRODUCT
+
+![Products](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/ProductsDelete1.png)
+![Products](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/ProductsDelete2.png)
+![Products](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/ProductsDelete3.png)
+
+## GET PRODUCT BY ORDER
+
+![Products](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/ProductsGetByOrder1.png)
+![Products](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/ProductsGetByOrder2.png)
+
+### ORDERS
+
+## GET ALL ORDERS
+
+![Orders](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/OrdersGetAll1.png)
+![Orders](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/OrdersGetAll2.png)
+
+## ADD AN ORDER
+
+![Orders](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/OrdersPost1.png)
+![Orders](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/OrdersPost2.png)
+![Orders](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/OrdersPost3.png)
+
+## GET ORDER BY ID
+
+![Orders](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/OrdersGet1.png)
+![Orders](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/OrdersGet2.png)
+![Orders](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/OrdersGet3.png)
+
+## UPDATE ORDER
+
+![Orders](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/OrdersPut1.png)
+![Orders](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/OrdersPut2.png)
+![Orders](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/OrdersPut3.png)
+
+## PARTIALLY UPDATE ORDER
+
+![Orders](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/OrdersPatch1.png)
+![Orders](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/OrdersPatch2.png)
+
+## REMOVE AN ORDER
+
+![Orders](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/OrdersDelete1.png)
+![Orders](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/OrdersDelete2.png)
+![Orders](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/OrdersDelete3.png)
+
+## GET ORDER BY CUSTOMER ID
+
+![Orders](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/OrdersGetByCustomer1.png)
+![Orders](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/OrdersGetByCustomer2.png)
+![Orders](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/OrdersGetByCustomer3.png)
+
+### ORDER DETAILS
+
+## GET ALL ORDER DETAILS
+
+![Order Details](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/OrderDetailsGetAll1.png)
+![Order Details](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/OrderDetailsGetAll2.png)
+
+## ADD AN ORDER DETAIL
+
+![Order Details](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/OrderDetailsPost1.png)
+![Order Details](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/OrderDetailsPost2.png)
+![Order Details](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/OrderDetailsPost3.png)
+
+## GET ORDER DETAIL BY ID
+
+![Order Details](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/OrderDetailsGet1.png)
+![Order Details](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/OrderDetailsGet2.png)
+![Order Details](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/OrderDetailsGet3.png)
+
+## UPDATE ORDER DETAIL
+
+![Order Details](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/OrderDetailsPut1.png)
+![Order Details](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/OrderDetailsPut2.png)
+![Order Details](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/OrderDetailsPut3.png)
+
+## PARTIALLY UPDATE ORDER DETAIL
+
+![Order Details](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/OrderDetailsPatch1.png)
+![Order Details](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/OrderDetailsPatch2.png)
+![Order Details](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/OrderDetailsPatch3.png)
+
+## REMOVE ORDER DETAIL
+
+![Order Details](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/OrderDetailsDelete1.png)
+![Order Details](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/OrderDetailsDelete2.png)
+
+### 401 AUTHORIZATION ERROR
+
+![Token Failure](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/TokenFailure1.png)
+![Token Failure](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/Images/TokenFailure2.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
