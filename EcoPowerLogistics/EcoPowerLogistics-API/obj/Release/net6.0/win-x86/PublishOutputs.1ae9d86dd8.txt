@@ -184,8 +184,6 @@ D:\Users\Ruan\source\repos\RUAN1611\CMPG-323-Project-2-33152985\EcoPowerLogistic
 D:\Users\Ruan\source\repos\RUAN1611\CMPG-323-Project-2-33152985\EcoPowerLogistics\EcoPowerLogistics-API\obj\Release\net6.0\win-x86\PubTmp\Out\Microsoft.AspNetCore.Connections.Abstractions.dll
 D:\Users\Ruan\source\repos\RUAN1611\CMPG-323-Project-2-33152985\EcoPowerLogistics\EcoPowerLogistics-API\obj\Release\net6.0\win-x86\PubTmp\Out\Microsoft.AspNetCore.CookiePolicy.dll
 D:\Users\Ruan\source\repos\RUAN1611\CMPG-323-Project-2-33152985\EcoPowerLogistics\EcoPowerLogistics-API\obj\Release\net6.0\win-x86\PubTmp\Out\Microsoft.AspNetCore.Cors.dll
-D:\Users\Ruan\source\repos\RUAN1611\CMPG-323-Project-2-33152985\EcoPowerLogistics\EcoPowerLogistics-API\obj\Release\net6.0\win-x86\PubTmp\Out\Microsoft.AspNetCore.Cryptography.Internal.dll
-D:\Users\Ruan\source\repos\RUAN1611\CMPG-323-Project-2-33152985\EcoPowerLogistics\EcoPowerLogistics-API\obj\Release\net6.0\win-x86\PubTmp\Out\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 D:\Users\Ruan\source\repos\RUAN1611\CMPG-323-Project-2-33152985\EcoPowerLogistics\EcoPowerLogistics-API\obj\Release\net6.0\win-x86\PubTmp\Out\Microsoft.AspNetCore.DataProtection.Abstractions.dll
 D:\Users\Ruan\source\repos\RUAN1611\CMPG-323-Project-2-33152985\EcoPowerLogistics\EcoPowerLogistics-API\obj\Release\net6.0\win-x86\PubTmp\Out\Microsoft.AspNetCore.DataProtection.Extensions.dll
 D:\Users\Ruan\source\repos\RUAN1611\CMPG-323-Project-2-33152985\EcoPowerLogistics\EcoPowerLogistics-API\obj\Release\net6.0\win-x86\PubTmp\Out\Microsoft.AspNetCore.DataProtection.dll
@@ -273,8 +271,6 @@ D:\Users\Ruan\source\repos\RUAN1611\CMPG-323-Project-2-33152985\EcoPowerLogistic
 D:\Users\Ruan\source\repos\RUAN1611\CMPG-323-Project-2-33152985\EcoPowerLogistics\EcoPowerLogistics-API\obj\Release\net6.0\win-x86\PubTmp\Out\Microsoft.Extensions.Hosting.Abstractions.dll
 D:\Users\Ruan\source\repos\RUAN1611\CMPG-323-Project-2-33152985\EcoPowerLogistics\EcoPowerLogistics-API\obj\Release\net6.0\win-x86\PubTmp\Out\Microsoft.Extensions.Hosting.dll
 D:\Users\Ruan\source\repos\RUAN1611\CMPG-323-Project-2-33152985\EcoPowerLogistics\EcoPowerLogistics-API\obj\Release\net6.0\win-x86\PubTmp\Out\Microsoft.Extensions.Http.dll
-D:\Users\Ruan\source\repos\RUAN1611\CMPG-323-Project-2-33152985\EcoPowerLogistics\EcoPowerLogistics-API\obj\Release\net6.0\win-x86\PubTmp\Out\Microsoft.Extensions.Identity.Core.dll
-D:\Users\Ruan\source\repos\RUAN1611\CMPG-323-Project-2-33152985\EcoPowerLogistics\EcoPowerLogistics-API\obj\Release\net6.0\win-x86\PubTmp\Out\Microsoft.Extensions.Identity.Stores.dll
 D:\Users\Ruan\source\repos\RUAN1611\CMPG-323-Project-2-33152985\EcoPowerLogistics\EcoPowerLogistics-API\obj\Release\net6.0\win-x86\PubTmp\Out\Microsoft.Extensions.Localization.Abstractions.dll
 D:\Users\Ruan\source\repos\RUAN1611\CMPG-323-Project-2-33152985\EcoPowerLogistics\EcoPowerLogistics-API\obj\Release\net6.0\win-x86\PubTmp\Out\Microsoft.Extensions.Localization.dll
 D:\Users\Ruan\source\repos\RUAN1611\CMPG-323-Project-2-33152985\EcoPowerLogistics\EcoPowerLogistics-API\obj\Release\net6.0\win-x86\PubTmp\Out\Microsoft.Extensions.Logging.Abstractions.dll
@@ -362,6 +358,10 @@ D:\Users\Ruan\source\repos\RUAN1611\CMPG-323-Project-2-33152985\EcoPowerLogistic
 D:\Users\Ruan\source\repos\RUAN1611\CMPG-323-Project-2-33152985\EcoPowerLogistics\EcoPowerLogistics-API\obj\Release\net6.0\win-x86\PubTmp\Out\Humanizer.dll
 D:\Users\Ruan\source\repos\RUAN1611\CMPG-323-Project-2-33152985\EcoPowerLogistics\EcoPowerLogistics-API\obj\Release\net6.0\win-x86\PubTmp\Out\MessagePack.dll
 D:\Users\Ruan\source\repos\RUAN1611\CMPG-323-Project-2-33152985\EcoPowerLogistics\EcoPowerLogistics-API\obj\Release\net6.0\win-x86\PubTmp\Out\MessagePack.Annotations.dll
+D:\Users\Ruan\source\repos\RUAN1611\CMPG-323-Project-2-33152985\EcoPowerLogistics\EcoPowerLogistics-API\obj\Release\net6.0\win-x86\PubTmp\Out\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Users\Ruan\source\repos\RUAN1611\CMPG-323-Project-2-33152985\EcoPowerLogistics\EcoPowerLogistics-API\obj\Release\net6.0\win-x86\PubTmp\Out\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\Users\Ruan\source\repos\RUAN1611\CMPG-323-Project-2-33152985\EcoPowerLogistics\EcoPowerLogistics-API\obj\Release\net6.0\win-x86\PubTmp\Out\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\Users\Ruan\source\repos\RUAN1611\CMPG-323-Project-2-33152985\EcoPowerLogistics\EcoPowerLogistics-API\obj\Release\net6.0\win-x86\PubTmp\Out\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 D:\Users\Ruan\source\repos\RUAN1611\CMPG-323-Project-2-33152985\EcoPowerLogistics\EcoPowerLogistics-API\obj\Release\net6.0\win-x86\PubTmp\Out\Microsoft.AspNetCore.JsonPatch.dll
 D:\Users\Ruan\source\repos\RUAN1611\CMPG-323-Project-2-33152985\EcoPowerLogistics\EcoPowerLogistics-API\obj\Release\net6.0\win-x86\PubTmp\Out\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 D:\Users\Ruan\source\repos\RUAN1611\CMPG-323-Project-2-33152985\EcoPowerLogistics\EcoPowerLogistics-API\obj\Release\net6.0\win-x86\PubTmp\Out\Microsoft.AspNetCore.Razor.Language.dll
@@ -385,6 +385,8 @@ D:\Users\Ruan\source\repos\RUAN1611\CMPG-323-Project-2-33152985\EcoPowerLogistic
 D:\Users\Ruan\source\repos\RUAN1611\CMPG-323-Project-2-33152985\EcoPowerLogistics\EcoPowerLogistics-API\obj\Release\net6.0\win-x86\PubTmp\Out\Microsoft.EntityFrameworkCore.Relational.dll
 D:\Users\Ruan\source\repos\RUAN1611\CMPG-323-Project-2-33152985\EcoPowerLogistics\EcoPowerLogistics-API\obj\Release\net6.0\win-x86\PubTmp\Out\Microsoft.EntityFrameworkCore.SqlServer.dll
 D:\Users\Ruan\source\repos\RUAN1611\CMPG-323-Project-2-33152985\EcoPowerLogistics\EcoPowerLogistics-API\obj\Release\net6.0\win-x86\PubTmp\Out\Microsoft.Extensions.DependencyInjection.dll
+D:\Users\Ruan\source\repos\RUAN1611\CMPG-323-Project-2-33152985\EcoPowerLogistics\EcoPowerLogistics-API\obj\Release\net6.0\win-x86\PubTmp\Out\Microsoft.Extensions.Identity.Core.dll
+D:\Users\Ruan\source\repos\RUAN1611\CMPG-323-Project-2-33152985\EcoPowerLogistics\EcoPowerLogistics-API\obj\Release\net6.0\win-x86\PubTmp\Out\Microsoft.Extensions.Identity.Stores.dll
 D:\Users\Ruan\source\repos\RUAN1611\CMPG-323-Project-2-33152985\EcoPowerLogistics\EcoPowerLogistics-API\obj\Release\net6.0\win-x86\PubTmp\Out\Microsoft.Identity.Client.dll
 D:\Users\Ruan\source\repos\RUAN1611\CMPG-323-Project-2-33152985\EcoPowerLogistics\EcoPowerLogistics-API\obj\Release\net6.0\win-x86\PubTmp\Out\Microsoft.IdentityModel.JsonWebTokens.dll
 D:\Users\Ruan\source\repos\RUAN1611\CMPG-323-Project-2-33152985\EcoPowerLogistics\EcoPowerLogistics-API\obj\Release\net6.0\win-x86\PubTmp\Out\Microsoft.IdentityModel.Logging.dll

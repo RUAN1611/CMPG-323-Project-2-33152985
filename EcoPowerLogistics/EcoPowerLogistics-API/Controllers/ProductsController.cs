@@ -9,6 +9,8 @@ using EcoPowerLogistics_API.Models;
 using Microsoft.AspNetCore.JsonPatch;
 using AutoMapper;
 using EcoPowerLogistics_API.Models.DTO;
+using Microsoft.AspNetCore.Authorization;
+using System.Data;
 
 namespace EcoPowerLogistics_API.Controllers
 {
@@ -88,6 +90,7 @@ namespace EcoPowerLogistics_API.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> PutProduct(short id, ProductDTO productDTO)
         {
             var product = _mapper.Map<Product>(productDTO);
@@ -121,6 +124,7 @@ namespace EcoPowerLogistics_API.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> PatchProduct(int id, [FromBody] JsonPatchDocument<ProductDTO> patchProductDTO)
         {
             if (id <= 0 || patchProductDTO == null)
@@ -156,6 +160,7 @@ namespace EcoPowerLogistics_API.Controllers
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status409Conflict)]
+        [Authorize(Roles = "Admin")]
         public async Task<ActionResult<ProductDTO>> PostProduct(ProductDTO productDTO)
         {
             var product = _mapper.Map<Product>(productDTO);
@@ -187,6 +192,7 @@ namespace EcoPowerLogistics_API.Controllers
         [HttpDelete("{id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteProduct(short id)
         {
             if (_context.Products == null)

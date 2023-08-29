@@ -15,7 +15,7 @@ namespace EcoPowerLogistics_API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize(Roles = "Admin,Customer")]
+    [Authorize(Roles = "Admin")]
     public class CustomersController : ControllerBase
     {
         private readonly ecopowerlogisticsdevContext _context;

@@ -9,11 +9,14 @@ using EcoPowerLogistics_API.Models;
 using AutoMapper;
 using EcoPowerLogistics_API.Models.DTO;
 using Microsoft.AspNetCore.JsonPatch;
+using Microsoft.AspNetCore.Authorization;
+using System.Data;
 
 namespace EcoPowerLogistics_API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(Roles = "Admin")]
     public class OrderDetailsController : ControllerBase
     {
         private readonly ecopowerlogisticsdevContext _context;
