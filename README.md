@@ -1,5 +1,9 @@
 # CMPG 323 Project 2 - 33152985
 
+## REFERENCES
+
+![References](./EcoPowerLogistics/EcoPowerLogistics-API/Documentation/References.pdf)
+
 ### LOGIN DETAILS FOR DEMO ADMIN ACCOUNT
 
 "username": "demoadmin", <br />
