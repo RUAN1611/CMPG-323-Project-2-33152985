@@ -6,7 +6,7 @@
 
 ### LOGIN DETAILS FOR DEMO ADMIN ACCOUNT
 
-Link for API: https://ecopowerlogistics-api-dev.azurewebsites.net/index.html
+Link for API: https://ecopowerlogistics-api-dev.azurewebsites.net/index.html <br />
 "username": "demoadmin", <br />
 "password": "Demo@123"
 
